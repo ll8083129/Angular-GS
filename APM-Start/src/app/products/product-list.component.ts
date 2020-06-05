@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from './product';
 import { ProductService } from './product.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
@@ -27,8 +28,8 @@ export class ProductListComponent implements OnInit{
     products: IProduct[] = [];
 
 
-      constructor(private productService: ProductService) {
-
+      constructor(private productService: ProductService, private route: ActivatedRoute) {
+        
       }
       toggleImages(): void {
         this.showImages = !this.showImages;
@@ -43,7 +44,6 @@ export class ProductListComponent implements OnInit{
           error: err => this.errorMessage = err
         });
         
-        this.filteredProducts = this.products;
       };
       performFilter(filterBy: string): any[] {
         filterBy = filterBy.toLowerCase();
