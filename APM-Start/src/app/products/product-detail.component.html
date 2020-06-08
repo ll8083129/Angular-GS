@@ -1,6 +1,21 @@
-<div class="card"
+<div class="card mb-3"
   *ngIf='product'>
+
   <div class="card-header">
     {{ pageTitle + ': ' + product.productName }}
+  </div>
+  <div class="card-body">
+    <img [src]='product.imageUrl'
+      [style.width.px]="imageWidth"
+      alt="Card image cap">
+    <p class="card-text"><strong>Product: </strong>{{product.productName}}</p>
+    <p class="card-text"><strong>Release Date: </strong>{{product.releaseDate}}</p>
+    <p class="card-text"><strong>Price: </strong>{{product.price| currency:'':'' }} zł</p>
+    <p class="card-text"><strong>Code: </strong>{{product.productCode}}</p>
+    <p class="card-text"><strong>5 star rating: </strong>
+      <pm-star [rating]='product.starRating'></pm-star>
+    </p>
+    <button class="btn btn-light"
+      [routerLink]="['/products']">&lt; Back</button>
   </div>
 </div>
