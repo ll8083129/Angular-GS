@@ -1,12 +1,6 @@
-<div class="crop"
-  [style.width.px]="starWidth"
-  [title]="rating"
-  (click)="onClick()">
-  <div style="width: 75px">
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-  </div>
-</div>
+<mat-progress-bar class="example-margin"
+  [color]="color"
+  [mode]="mode"
+  [value]="rating"
+  [bufferValue]="bufferValue">
+</mat-progress-bar>
